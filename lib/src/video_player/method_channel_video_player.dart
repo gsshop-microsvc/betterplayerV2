@@ -219,6 +219,9 @@ class MethodChannelVideoPlayer extends VideoPlayerPlatform {
 
     if (milliseconds <= 0) return null;
 
+    // absolute 포지션 오류 수정
+    if (8640000000000000 <= milliseconds) return null;
+
     return DateTime.fromMillisecondsSinceEpoch(milliseconds);
   }
 
